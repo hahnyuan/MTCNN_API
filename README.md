@@ -9,11 +9,11 @@ https://github.com/kpzhang93/MTCNN_face_detection_alignment
 I will going to support more framework such as Caffe, Pytorch and Mxnet.
 
 - [x] Tensorflow
-- [] Caffe
-- [] Pytorch
-- [] Mxnet
+- [ ] Caffe
+- [ ] Pytorch
+- [ ] Mxnet
 
-# Requirement
+Requirement
 * tensorflow
 * python2.x or python3.x
 * cv2
@@ -35,6 +35,8 @@ return: (boxes, landmarks)
 * boxes is a list contains ndarray with shape (n_faces_in_pic, 5), 5 number represent for (x1,y1,x2,y2,score).
 * landmarks is a list contains ndarray with shape(n_faces_in_pic, 10),10 landmark number represent for
         (leyex,reyex,nosex,lmouthx,rmouthx,leyey,reyey,nosey,lmouthy,rmouthy) l:Left, r:Right
+
+
 
 # Example
 
