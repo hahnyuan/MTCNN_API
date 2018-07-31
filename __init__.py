@@ -35,13 +35,17 @@ def detect_cv2_ims(images,minsize=20,threshold=(0.6, 0.7, 0.7),scale_factor=0.70
         (leyex,reyex,nosex,lmouthx,rmouthx,leyey,reyey,nosey,lmouthy,rmouthy) l:Left, r:Right
     """
     pnet, rnet, onet=get_net(gpu_fraction)
-    if images is not list:
+    if type(images) is not list:
         images=[images]
     boxes=[]
     landmarks=[]
     for bgr in images:
-        rgb = bgr[..., ::-1]
-        box, landmark = detect_face.detect_face(rgb, minsize, pnet, rnet, onet, threshold, scale_factor)
+        try:
+            rgb = bgr[..., ::-1]
+            box, landmark = detect_face.detect_face(rgb, minsize, pnet, rnet, onet, threshold, scale_factor)
+        except:
+            box=[]
+            landmark=[]
         boxes.append(box)
         landmarks.append(landmark)
     return boxes,landmarks
